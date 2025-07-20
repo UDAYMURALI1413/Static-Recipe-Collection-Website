@@ -1,0 +1,350 @@
+
+
+/* Apply a more intuitive box model globally */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* Define global custom properties (CSS Variables) */
+:root {
+  /* Color Palette */
+  /* Define primary, secondary, accent colors. Adjust hex codes as needed! */
+  --color-primary: #14142b;      /* A pleasant green, good for branding/accents */
+  --color-secondary: #0b5698;   /* A warm yellow/orange, good for highlights */
+  --color-accent: #E91E63;      /* A contrasting pink/red, use sparingly for attention */
+
+  /* Define text and background colors */
+  --color-text-dark: #050505;   /* Dark gray for main text, better than pure black */
+  --color-text-light: #FFFFFF; /* White text for dark backgrounds */
+  --color-bg-light: rgba(187, 210, 255, 0.838);    /* Very light gray for the main page background */
+  --color-bg-white: #FFFFFF;   /* Pure white, often used for cards or content areas */
+  --color-border: #dddddd;     /* Light gray for borders */
+
+  /* Font Families */
+  /* Define primary font for body text and a secondary for headings (optional) */
+  /* Consider web-safe fonts or importing Google Fonts later */
+  --font-family-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean sans-serif stack */
+  --font-family-headings: 'Georgia', serif; /* Slightly more decorative serif for headings */
+
+  /* Spacing Units */
+  /* Define consistent spacing using rem units (relative to root font size) */
+  --spacing-xs: 0.25rem;  /* Extra small spacing (approx 4px if root is 16px) */
+  --spacing-sm: 0.5rem;   /* Small spacing (approx 8px) */
+  --spacing-md: 1rem;     /* Medium spacing (approx 16px) */
+  --spacing-lg: 1.5rem;   /* Large spacing (approx 24px) */
+  --spacing-xl: 2rem;     /* Extra large spacing (approx 32px) */
+  --spacing-xxl: 3rem;    /* Extra extra large spacing (approx 48px) */
+
+  /* Other Useful Variables */
+  --border-radius-sm: 3px;
+  --border-radius-md: 5px;
+  --box-shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+}
+
+
+
+body{
+  background-color: var(--color-bg-light);
+
+  color: var(--color-text-dark);
+
+  font-family: var(--font-family-primary);
+
+  line-height: 1.5;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+p{
+  margin-bottom: var(--spacing-md);
+}
+
+
+
+h1{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md); /* Consistent space below */
+  margin-top: 0.2rem;
+}
+
+
+
+/* Style headings for hierarchy and spacing */
+h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings);
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md); /* Consistent space below */
+  margin-top: var(--spacing-xl); /* Consistent space above */
+}
+
+
+/* Define font sizes */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+
+ul,ol{
+  margin-bottom:var(--spacing-md);
+  padding-left: var(--spacing-xl);
+}
+
+li{margin-bottom: var(--spacing-sm);}
+
+a{
+  color:var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+}
+
+
+a:hover{
+  color:var(--color-secondary);
+}
+
+a:focus{
+  color:rgb(46, 54, 173);
+} 
+
+
+header{
+  background-color:rgba(26, 26, 49, 0.341);
+  padding:10px 20px;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  
+}
+
+
+.branding{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+nav a {
+  
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-primary);
+  background-color: transparent; 
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+/* Hover and Focus states */
+nav a:hover,
+nav a:focus {
+  background-color: var(--color-primary-light); 
+  color: var(--color-text-dark); 
+  text-decoration: none;
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+.logo {
+  width: 100px; /* or try 40px, adjust as needed */
+  height: 100px; /* maintain aspect ratio */
+  object-fit: contain;
+  padding: 0; /* optional: reduce padding too */
+  margin-right: 10px;
+  
+}
+
+
+
+
+
+footer{
+  margin-top: var(--spacing-xxl);
+
+  background-color: var(--color-text-dark);
+
+  color: var(--color-text-light);
+
+  padding: var(--spacing-md) var(--spacing-lg);
+  
+  text-align: center;
+}
+
+/* --- Homepage Layout --- */
+
+
+
+.featured-recipes h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  grid-column: 1 / -1;
+}
+
+.featured-recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+
+}
+
+.intro{
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Style the image within the recipe card */
+.recipe-card{
+  background-color: var(--color-bg-white);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-light);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+
+/* Style the image within the recipe card */
+.recipe-card img {
+  width: 100%; /* Prevent image from exceeding card width */
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: var(--spacing-md);
+}
+
+.recipe-card h3 {
+  font-family:cursive;
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.recipe-card p {
+   margin-bottom: var(--spacing-md);
+   flex-grow: 1;
+   
+}
+
+/* Style the link as a button within the recipe card */
+.recipe-card a {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  font-weight: bold;
+  margin-top: auto; /* Push button to bottom when using flex column */
+}
+
+/* Style button hover/focus states */
+.recipe-card a:hover,
+.recipe-card a:focus {
+  background-color: #367c39; /* Example darker green */
+  color: var(--color-text-light);
+  text-decoration: none;
+  /* transform: translateY(-2px); */
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+
+/* Style the main heading on the category page */
+main > h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.category-recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+
+/* Style the main heading on the recipe page */
+
+main > h1 {
+  
+  text-align: center;
+  
+  margin-bottom: var(--spacing-xl); 
+}
+
+.recipe-layout-container {
+  /* 1. Establish this as a Grid Container */
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--spacing-xl); /* e.g., 2rem, adjust as needed */
+  align-items: start;
+}
+
+.recipe-image-column img {
+  max-width: 100%; /* Prevents image from exceeding column width */
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+}
+
+.recipe-details-column p.description {
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg); 
+}
+
+.recipe-details-column h2 {
+  margin-top: var(--spacing-xl); 
+  margin-bottom: var(--spacing-sm);
+}
+
+
+.recipe-details-column ul li{
+  margin-bottom: var(--spacing-xs);
+}
+
+.recipe-details-column ol li {
+  margin-bottom: var(--spacing-md);
+}
+
+
+
+
