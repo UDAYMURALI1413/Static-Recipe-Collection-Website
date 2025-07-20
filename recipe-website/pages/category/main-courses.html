@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>category-listing</title>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon/favicon-logo.webp">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        
+       <div class="branding">
+        <img src="../../images/favicon/favicon-logo.webp" alt="logo" class="logo">
+        <h1>The Recipe Chef</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../../index.html" >Homepage</a></li>
+                <li><a href="appetizers.html">Appetizers</a></li>
+                <li><a href="main-courses.html">Main Courses</a></li>
+                <li><a href="deserts.html">Desserts</a></li>
+                
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <main>
+    
+    
+        <!-- Heading for the category - this would be dynamically changed in a real site -->
+        <h2>Indian Main Courses</h2>
+
+        <!-- Container for the list of recipe previews -->
+        <section class="category-recipe-list"> <!-- Optional div for styling/layout -->
+
+           <!-- In pages/category.html, inside the <div class="recipe-previews-container"> -->
+
+
+            <article class="recipe-card">
+                
+                <img src="../../images/chicken-biryani/chicken-biryani.jpg" alt="Placeholder image for Recipe One">
+                <!-- Link into the 'recipes' subfolder -->
+                <h3>Chicken Biryani</h3>
+                <p>A classic aromatic chicken and rice dish layered with spices</p>
+                <!-- This link also points into 'recipes' subfolder -->
+                <a href="../recipes/chicken-biryani.html" class="view-recipe-link">View Recipe</a>
+            </article>
+
+
+            <article class="recipe-card">
+                <img src="../../images/Butter-chicken/Butter-Chicken.jpg" alt="Placeholder image for Recipe One">
+                <!-- Link into the 'recipes' subfolder -->
+                <h3>Butter Chicken</h3>
+                <p>Creamy tomato-based curry with marinated chicken</p>
+                <!-- This link also points into 'recipes' subfolder -->
+                <a href="../recipes/Butter-Chicken.html" class="view-recipe-link">View Recipe</a>
+            </article>
+
+            <article class="recipe-card">
+                <img src="../../images/Channa-masala/channa-masala.jpg" alt="Placeholder image for Recipe Two">
+                <!-- Link into the 'recipes' subfolder -->
+                <h3>Chana Masala</h3>
+                <p>Hearty, tangy curry cooked with chickpeas, tomatoes, and spices.</p>
+                <!-- This link also points into 'recipes' subfolder -->
+                <a href="../recipes/Chana-Masala.html" class="view-recipe-link">View Recipe</a>
+            </article>
+
+            <article class="recipe-card">
+                <img src="../../images/Quick-Lemon-Rice/Lemon-Rice.png" alt="Placeholder image for Recipe Two">
+                <!-- Link into the 'recipes' subfolder -->
+                <h3>Quick Lemon Rice</h3>
+                <p>A vibrant and flavorful South Indian rice dish</p>
+                <!-- This link also points into 'recipes' subfolder -->
+                <a href="../recipes/lemon-rice.html" class="view-recipe-link">View Recipe</a>
+            </article>
+
+            <article class="recipe-card">
+                  <!-- Recipe title (H3 under H2), linked -->
+                 <img src="../../images/Crispy-Rava-Dosa/dosa.png" alt="coco-chutney">
+                 <h3>Crispy Rava Dosa</h3>
+                 <p>
+                     A quick and easy dish for breakfast with delicious taste.
+                 </p>
+                 <a href="../recipes/rava-dosa.html">View Recipe</a> <!-- Explicit link to recipe -->
+             </article>
+
+
+         <!-- Add more <article class="recipe-preview"> elements as needed for other recipes -->
+
+        
+
+         </section> 
+    </main>
+
+
+    <footer>
+        <p>&copy; 2025 Recipe Collection. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
